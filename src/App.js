@@ -15,12 +15,7 @@ function App() {
   };
 
   const addContact = (contact) => {
-    let newContact = {
-      name: contact.name,
-      phone: contact.phone,
-      email: contact.email,
-    }
-    setContacts((prev) => [...prev, newContact]);
+    setContacts((prev) => [...prev, contact]);
   }
 
   const addAppointment = (appointment) => {
