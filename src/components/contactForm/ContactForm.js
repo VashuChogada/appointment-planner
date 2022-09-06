@@ -7,7 +7,8 @@ export const ContactForm = ({
   setPhone,
   email,
   setEmail,
-  handleSubmit
+  handleSubmit,
+  duplicate
 }) => {
 
   const handleNameChange = (e) => {
@@ -23,11 +24,11 @@ export const ContactForm = ({
 
   return (
     <form onSubmit={handleSubmit}>
-      <p>Name: {name}</p>
+      {duplicate ? <p style={{color: 'red'}}>Name: Contact for this name already exists!</p> : <p>Name: </p>}
       <input onChange={handleNameChange} type='text' value={name} id='name'/>
-      <p>Phone: {phone}</p>
+      <p>Phone: </p>
       <input onChange={handlePhoneChange} type='text' value={phone} id='phone'/>
-      <p>Email: {email}</p>
+      <p>Email: </p>
       <input onChange={handleEmailChange} type='text' value={email} id='email'/>
       <button type='submit'>Submit</button>
     </form>
