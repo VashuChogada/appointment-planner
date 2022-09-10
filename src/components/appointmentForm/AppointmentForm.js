@@ -19,6 +19,12 @@ export const AppointmentForm = ({
     return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
   };
 
+  const AppointmentForm = () => {
+    <form onSubmit={handleSubmit}>
+
+    </form>
+  }
+
   return (
     AppointmentForm
   );

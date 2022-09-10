@@ -1,23 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
+import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 
-export const AppointmentsPage = () => {
-  /*
-  Define state variables for 
-  appointment info
-  */
+export const AppointmentsPage = ({appointments, contacts, addAppointment}) => {
+  const [title, setTitle] = useState('');
+  const [contact, setContact] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /*
-    Add contact info and clear data  
-    */
-   
+    addAppointment(e);
+    setTitle('');
+    setContact('');
+    setDate('');
+    setTime('');
   };
 
   return (
     <div>
       <section>
         <h2>Add Appointment</h2>
+        <AppointmentForm
+        contacts={contacts}
+        contact={contact} 
+        setContact={setContact}
+        title={title}
+        setTitle={setTitle}
+        date={date}
+        setDate={setDate}
+        time={time}
+        setTime={setTime}
+        handleSubmit={handleSubmit}
+        />
       </section>
       <hr />
       <section>

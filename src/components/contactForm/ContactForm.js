@@ -25,11 +25,11 @@ export const ContactForm = ({
   return (
     <form onSubmit={handleSubmit}>
       {duplicate ? <p style={{color: 'red'}}>Name: Contact for this name already exists!</p> : <p>Name: </p>}
-      <input onChange={handleNameChange} type='text' value={name} id='name'/>
+      <input onChange={handleNameChange} type='text' value={name} id='name' required placeholder="First Last"/>
       <p>Phone: </p>
-      <input onChange={handlePhoneChange} type='text' value={phone} id='phone'/>
+      <input onChange={handlePhoneChange} type='text' value={phone} id='phone' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" />
       <p>Email: </p>
-      <input onChange={handleEmailChange} type='text' value={email} id='email'/>
+      <input onChange={handleEmailChange} type='text' value={email} id='email' required placeholder="John@email.com"/>
       <button type='submit'>Submit</button>
     </form>
   );

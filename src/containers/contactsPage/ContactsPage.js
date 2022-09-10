@@ -31,6 +31,9 @@ export const ContactsPage = ({contacts, addContact}) => {
     phone: phone,
     email: email
   });
+  setName('');
+  setPhone('');
+  setEmail('');
 };
 
  
@@ -47,7 +50,7 @@ export const ContactsPage = ({contacts, addContact}) => {
 
       <section>
         <h2>Contacts</h2>
-        <TileList contacts={contacts}/>
+        <TileList list={contacts} />
       </section>
 
     </div>

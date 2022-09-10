@@ -5,7 +5,7 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
   //list of contacts, and appointments
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState([{name: "Vashu Chogada", phone: "123-456-7890", email: "vashu@email.com"}]);
   const [appointments, setAppointments] = useState([]);
 
 
