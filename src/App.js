@@ -19,13 +19,7 @@ function App() {
   }
 
   const addAppointment = (appointment) => {
-    let newAppointment = {
-      title: appointment.title,
-      contact: appointment.contact,
-      date: appointment.date,
-      time: appointment.time
-    }
-    setAppointments((prev) => [...prev, newAppointment])
+    setAppointments((prev) => [...prev, appointment])
   }
 
 

@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
+import { TileList } from "../../components/tileList/TileList";
 
 export const AppointmentsPage = ({appointments, contacts, addAppointment}) => {
   const [title, setTitle] = useState('');
@@ -9,11 +10,16 @@ export const AppointmentsPage = ({appointments, contacts, addAppointment}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addAppointment(e);
-    setTitle('');
-    setContact('');
-    setDate('');
-    setTime('');
+    addAppointment({
+      title: e.title,
+      contact: e.contact,
+      date: e.date,
+      time: e.time
+    });
+    // setTitle('');
+    // setContact('');
+    // setDate('');
+    // setTime('');
   };
 
   return (
@@ -22,13 +28,13 @@ export const AppointmentsPage = ({appointments, contacts, addAppointment}) => {
         <h2>Add Appointment</h2>
         <AppointmentForm
         contacts={contacts}
-        contact={contact} 
+
         setContact={setContact}
-        title={title}
+
         setTitle={setTitle}
-        date={date}
+
         setDate={setDate}
-        time={time}
+
         setTime={setTime}
         handleSubmit={handleSubmit}
         />
@@ -36,6 +42,7 @@ export const AppointmentsPage = ({appointments, contacts, addAppointment}) => {
       <hr />
       <section>
         <h2>Appointments</h2>
+        <TileList list={appointments} />
       </section>
     </div>
   );

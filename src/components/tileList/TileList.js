@@ -5,7 +5,7 @@ export const TileList = ({list}) => {
   return (
     list.map((item, index) => {
       return(
-        <Tile key={index} item={item} />
+        <Tile index={index} item={item} />
       )
     })
   );

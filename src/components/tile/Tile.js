@@ -1,11 +1,11 @@
 import React from "react";
 
-export const Tile = ({item, key}) => {
+export const Tile = ({item, index}) => {
 
   let array = Object.values(item);
 
   return (
-    <div className="tile-container" key={key}>
+    <div className="tile-container" key={index}>
       {array.map(value => {
         // validates if its the first item in the array
         if(value === array[0]){
@@ -18,7 +18,7 @@ export const Tile = ({item, key}) => {
 
         // returns value of array for all other items
         return(
-          <p className="tile" key={value}>
+          <p className="tile">
             {value}
           </p>
         )
