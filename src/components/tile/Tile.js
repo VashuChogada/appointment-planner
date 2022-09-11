@@ -10,7 +10,7 @@ export const Tile = ({item, index}) => {
         // validates if its the first item in the array
         if(value === array[0]){
           return (
-            <p className="tile-title">
+            <p key={value} className="tile-title">
              {value} 
             </p>
           )
@@ -18,9 +18,9 @@ export const Tile = ({item, index}) => {
 
         // returns value of array for all other items
         return(
-          <p className="tile">
+          <p key={value} className="tile">
             {value}
-          </p>
+          </p> 
         )
       })}
     </div>
