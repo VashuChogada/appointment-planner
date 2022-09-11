@@ -11,15 +11,15 @@ export const AppointmentsPage = ({appointments, contacts, addAppointment}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addAppointment({
-      title: e.title,
-      contact: e.contact,
-      date: e.date,
-      time: e.time
+      title: title,
+      contact: contact,
+      date: date,
+      time: time
     });
-    // setTitle('');
-    // setContact('');
-    // setDate('');
-    // setTime('');
+    setTitle('');
+    setContact('');
+    setDate('');
+    setTime('');
   };
 
   return (
@@ -28,13 +28,13 @@ export const AppointmentsPage = ({appointments, contacts, addAppointment}) => {
         <h2>Add Appointment</h2>
         <AppointmentForm
         contacts={contacts}
-
+        contact={contact}
         setContact={setContact}
-
+        title={title}
         setTitle={setTitle}
-
+        date={date}
         setDate={setDate}
-
+        time={time}
         setTime={setTime}
         handleSubmit={handleSubmit}
         />
