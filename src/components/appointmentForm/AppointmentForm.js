@@ -36,10 +36,10 @@ export const AppointmentForm = ({
   return (
     <form onSubmit={handleSubmit}>
       <input type='text' value={title} id='title' onChange={handleTitleChange} placeholder='Title' required/>
-      <input min={getTodayString} id='date' type='date' value={date} onChange={handleDateChange} required/>
+      <input min={getTodayString()} id='date' type='date' value={date} onChange={handleDateChange} required/>
       <input type='time' value={time} id='time' onChange={handleTimeChange} required/>
       <ContactPicker id='contact' handleContactChange={handleContactChange} contacts={contacts}/>
-      <button type="submit"> Add Appointment </button>
+      <button type='submit'> Add Appointment </button>
     </form>
   );
 };
